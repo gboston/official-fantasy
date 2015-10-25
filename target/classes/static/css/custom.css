@@ -1,0 +1,115 @@
+/* Owl Carousel Bootstrap Custom CSS */
+
+    #owl-demo .item{
+        /*background: #3fbf79;*/
+        padding: 30px 0px;
+        margin: 10px;
+        color: #FFF;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        text-align: center;
+        min-height: 20em;
+    }
+    .customNavigation{
+      text-align: center;
+    }
+    .customNavigation a{
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    
+    #owl-demo .item{
+      margin: 3px;
+    }
+    #owl-demo .item img{
+      display: block;
+      width: 100%;
+      
+    }
+    
+     #owl-jumbo .item{
+        background: #E8E8E8;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin: 3px;
+        color: #FFF;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        text-align: center;
+        min-height: 11em;
+    }
+    
+    #owl-jumbo .item h3{
+        color:#184F44;
+        margin-top: 5px;
+    }
+    
+    #owl-jumbo .item h4{
+        color: black;
+        font-style: italic;
+        font-size: medium;
+        padding: 2px;
+    }
+    
+    #owl-jumbo .item h2{
+        color:goldenrod;
+        font-style: italic;
+        font-size: 50px;
+        margin-top: 10px;
+    }
+
+
+    
+    #owl-jumbo .item img{
+      display: block;
+      width: 100%;
+      
+    }
+    
+    .owl-header{
+        
+    }
+    
+    #header-bkgnd1 {
+	background-image: url(../images/cl-stadium.png);
+        background-size: cover;
+        background-position: center;
+        margin-left: 0px;
+    
+}
+
+#header-bkgnd2 {
+	background-image: url(../images/messi.jpg);
+        background-size: cover;
+        background-position: top;
+        margin-left: 0px;
+}
+
+.btn-warning {
+  background-color: #228776;
+  color: #ffffff;
+  *background-color: #228776;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+}
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active,
+.btn-warning.disabled,
+.btn-warning[disabled] {
+  color: #ffffff;
+  background-color: #184F44;
+  *background-color: 184F44;
+}
+.btn-warning:active,
+.btn-warning.active {
+  background-color: 184F44 \9;
+  
+  }

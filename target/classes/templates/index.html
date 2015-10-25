@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="The League is a football fantasy game"/>
+    <meta name="author" content="Wouter Baert"/>
+    <title>The League - Fantasy</title>
+    <link rel="favicon" href="images/favicon.png"/>
+    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <!-- Custom styles for our template -->
+    <link rel="stylesheet" href="css/bootstrap-theme.css" media="screen"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!-- Owl Carousel Assets -->
+    <link href="owl-carousel/owl.carousel.css" rel="stylesheet"/>
+    <link href="owl-carousel/owl.theme.css" rel="stylesheet"/>
+    <link href="css/custom.css" rel="stylesheet" type="text/css"/>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Button for smallest screens -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo-theleague.png" alt="The League Fantasy Logo"/>
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="ranking.html">Ranking</a></li>
+                    <li><a href="players.html">Player Stats</a></li>
+                    <!--<li><a href="portfolio.html">Portfolio</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sidebar-right.html">Right Sidebar</a></li>
+                            <li><a href="#">Dummy Link1</a></li>
+                            <li><a href="#">Dummy Link2</a></li>
+                            <li><a href="#">Dummy Link3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    -->
+
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+    <!-- /.navbar -->
+
+    <div class="owl-header">
+        <div class="container">
+            <!-- /start carousel -->
+          <div class="row">
+
+              <div id="owl-demo" class="owl-carousel">
+                
+                  <div class="item" id="header-bkgnd1">
+                      <h1>Champions League Started</h1>
+                      <br/>
+                      <a href="#" class="btn btn-warning" role="button">Subscribe</a>
+                  </div>
+                  <div class="item" id="header-bkgnd2">
+                      <h1>Messi Injured</h1>
+                      <br/>
+                      <a href="#" class="btn btn-warning" role="button">Read More</a>
+                  </div>
+
+
+            <!--  </div>
+              <div class="customNavigation">
+                <a class="btn prev">Previous</a>
+                <a class="btn next">Next</a>
+                <a class="btn play">Autoplay</a>
+                <a class="btn stop">Stop</a>
+              </div>-->
+
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- /end carousel -->
+  
+    <!-- container -->
+    <div class="container">
+       
+            <div class="col-md-8">
+                <div class="row newsitem">
+                    <div class="col-sm-4 newsphoto"> 
+    
+                        <img src="images/ronaldo.jpg" alt="" class="img-responsive img-thumbnail"/>
+                    </div>
+                    <div class="col-sm-8 newstext">
+                        <h2>Newsitem 1</h2>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.  
+                        <br/>
+                        <a href="news.html"> > Read More</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="row newsitem">
+                    <div class="col-sm-4 newsphoto"> 
+
+                        <img src="images/CL-BY.jpg" alt="" class="img-responsive img-thumbnail"/>
+                    </div>
+                    <div class="col-sm-8 newstext">
+                        <h2>Newsitem 2</h2>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.  
+                        <br/>
+                        <a href="news.html"> > Read More</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="sidetable">
+                        <h2><a href="/ranking">Ranking</a></h2>
+                        <div class="sidetablecontent-wrapper">
+                            <table>
+                                <tr th:each="user,rowstat:${users}">
+                                    <td class="position" th:text="${rowstat.count}">1</td>
+                                    <td class="name" th:text="${user.getName()}">Dendooven</td>
+                                    <td class="score" th:text="${user.getPoints()}">58</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="sidetable">
+                        <h2>Next Matchdays</h2>
+                        <div class="sidetablecontent-wrapper">
+                            <table>
+                                <tr>
+                                    <td class="md">Matchday 2</td>
+                                    <td class="date">29/9</td>
+                                </tr>
+                                <tr>
+                                    <td class="md">Matchday 3</td>
+                                    <td class="date">20/10</td>
+                                </tr>
+                                <tr>
+                                    <td class="md">Matchday 4</td>
+                                    <td class="date">3/11</td>
+                                </tr>
+                                <tr>
+                                    <td class="md">Matchday 5</td>
+                                    <td class="date">24/11</td>
+                                </tr>
+                                <tr>
+                                    <td class="md">Matchday 6</td>
+                                    <td class="date">8/12</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <br/>
+    <br/>
+    <!--jumbotron-->
+
+        <div class="container">
+            <div class="row">
+                <div class='col-md-12 text-center'>
+                    <h3>Top Players</h3>
+                </div>
+            </div>
+            <div class="owl-header">
+                <div id="owl-jumbo" class="owl-carousel">
+
+                      <div class="item" th:each="player :${topPlayers}">
+                          <h3 th:text="${player.getName()}">Ronaldo</h3>
+                          <h4></h4>
+                          <h2 th:text="${player.getPoints()}">14</h2>
+                      </div>
+
+                <!--  </div>
+                  <div class="customNavigation">
+                    <a class="btn prev">Previous</a>
+                    <a class="btn next">Next</a>
+                    <a class="btn play">Autoplay</a>
+                    <a class="btn stop">Stop</a>
+                  </div>-->
+
+                </div>
+            </div>
+        </div>
+
+    <!--end jumbotron-->
+
+
+    <footer id="footer">
+
+        <div class="footer1">
+
+        </div>
+
+        <div class="footer2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-6 panel">
+                        <div class="panel-body">
+
+                            <div class="panel-body">
+                                <p class="follow-me-icons">
+                                    <a href=""><i class="fa fa-twitter fa-2"></i></a>
+                                    <a href=""><i class="fa fa-dribbble fa-2"></i></a>
+                                    <a href=""><i class="fa fa-github fa-2"></i></a>
+                                    <a href=""><i class="fa fa-facebook fa-2"></i></a>
+                                    <a href=""><i class="fa fa-youtube fa-2"></i></a>
+                                    <a href=""><i class="fa fa-pinterest fa-2"></i></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>        
+                    <div class="col-md-6 panel">
+                        
+                        <div class="panel-body">
+                            <p class="text-right">
+                                Copyright &copy; 2014. Template by <a href="http://webthemez.com/" rel="develop">WebThemez.com</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /row of panels -->
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src="../static/js/modernizr-latest.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="js/jquery.cslider.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="owl-carousel/owl.carousel.js"></script>
+    <script>
+    $(document).ready(function() {
+
+      var owl = $("#owl-demo");
+
+      owl.owlCarousel({
+
+      items : 1, //10 items above 1000px browser width
+      itemsDesktop : [1000,1], //5 items between 1000px and 901px
+      itemsDesktopSmall : [900,1], // 3 items betweem 900px and 601px
+      itemsTablet: [600,1], //2 items between 600 and 0;
+      itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
+      autoPlay: 6000
+      });
+
+      // Custom Navigation Events
+      $(".next").click(function(){
+        owl.trigger('owl.next');
+      })
+      $(".prev").click(function(){
+        owl.trigger('owl.prev');
+      })
+      $(".play").click(function(){
+        owl.trigger('owl.play',1000);
+      })
+      $(".stop").click(function(){
+        owl.trigger('owl.stop');
+      })
+
+
+    });
+        $(document).ready(function() {
+
+      var owl = $("#owl-jumbo");
+
+      owl.owlCarousel({
+
+      items : 5, //10 items above 1000px browser width
+      itemsDesktop : [1000,5], //5 items between 1000px and 901px
+      itemsDesktopSmall : [900,4], // 3 items betweem 900px and 601px
+      itemsTablet: [600,3], //2 items between 600 and 0;
+      itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
+      autoPlay: 6000
+      });
+
+      // Custom Navigation Events
+      $(".next").click(function(){
+        owl.trigger('owl.next');
+      })
+      $(".prev").click(function(){
+        owl.trigger('owl.prev');
+      })
+      $(".play").click(function(){
+        owl.trigger('owl.play',1000);
+      })
+      $(".stop").click(function(){
+        owl.trigger('owl.stop');
+      })
+
+
+    });
+    </script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/application.js"></script>
+    
+
+</body>
+</html>
